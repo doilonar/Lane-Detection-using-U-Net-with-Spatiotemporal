@@ -36,6 +36,7 @@ This method uses a pipeline of traditional image processing techniques:
 2.  **Perspective Transform**: Warps the detected lane lines into a bird's-eye view.
 3.  **Lane Fitting**: Uses a sliding window approach on a histogram of the warped image to identify lane pixels and fits a second-degree polynomial to each lane line.
 4.  **Visualization**: Unwarps the detected lane area and overlays it on the original frame, displaying the calculated radius of curvature.
+This project utilizes the TuSimple dataset.
 
 ### 2. U-Net with Binary Focal Loss (`unet_binaryfocal/`)
 This is a standard U-Net architecture designed for semantic segmentation.
