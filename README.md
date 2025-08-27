@@ -42,8 +42,7 @@ This is a standard U-Net architecture designed for semantic segmentation.
 -   **Architecture**: Consists of a contracting path (encoder) to capture context and a symmetric expanding path (decoder) for precise localization.
 -   **Loss Function**: Uses `BinaryFocalLoss` to address the imbalance between the lane pixels and the background.
 -   **Training**: The `run_unet.py` script uses a data generator to feed images and corresponding masks to the model.
-![Accuracy](<img width="640" height="480" alt="accuracy_plot_old" src="https://github.com/user-attachments/assets/65905bbd-3a0a-463b-9a96-c32a39d4193b" />
-)
+![Accuracy](https://github.com/user-attachments/assets/65905bbd-3a0a-463b-9a96-c32a39d4193b)
 ![Compared](<img width="892" height="198" alt="Picture1" src="https://github.com/user-attachments/assets/19bd1bd0-edb0-4ec7-83f2-4107568f7cc9" />
 )
 ![Loss](<img width="640" height="480" alt="loss_plot_old" src="https://github.com/user-attachments/assets/bb103422-44d2-4d46-a567-f01b18250b58" />
