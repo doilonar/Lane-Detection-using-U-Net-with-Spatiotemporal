@@ -42,13 +42,21 @@ This is a standard U-Net architecture designed for semantic segmentation.
 -   **Architecture**: Consists of a contracting path (encoder) to capture context and a symmetric expanding path (decoder) for precise localization.
 -   **Loss Function**: Uses `BinaryFocalLoss` to address the imbalance between the lane pixels and the background.
 -   **Training**: The `run_unet.py` script uses a data generator to feed images and corresponding masks to the model.
-
+![Accuracy]([https://github.com/tograh/testrepository/3DTest.png](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/accuracy_plot_old.png))
+![Compared]([[https://github.com/tograh/testrepository/3DTest.png](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/accuracy_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/Picture1.png))
+![Loss]([[https://github.com/tograh/testrepository/3DTest.png](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/accuracy_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/loss_plot_old.png))
 ### 3. U-Net with ConvLSTM (`unet_lstm/`)
 This model enhances the standard U-Net by adding `ConvLSTM2D` layers in the bottleneck. This allows the model to learn spatiotemporal features from sequential frames in a video, improving temporal consistency.
 -   **Architecture**: Integrates two `ConvLSTM2D` layers between the encoder and decoder paths.
 -   **Loss Function**: Utilizes an `iou_loss` (1 - IoU), which directly optimizes the Intersection over Union metric. This is highly effective for segmentation tasks.
 -   **Metric**: The model is evaluated using the `iou` metric.
+![Accuracy IoU Loss]([[https://github.com/tograh/testrepository/3DTest.png](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/accuracy_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_iou_loss/accuracy_plot_iou.png))
+![Compared IoU Loss]([[[https://github.com/tograh/testrepository/3DTest.png](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/accuracy_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/Picture1.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_iou_loss/Picture2.png))
+![Loss IoU Loss]([[[https://github.com/tograh/testrepository/3DTest.png](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/accuracy_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/loss_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_iou_loss/loss_plot.png))
 
+![Accuracy LSTM Integration]([[[https://github.com/tograh/testrepository/3DTest.png](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/accuracy_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_iou_loss/accuracy_plot_iou.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_lstm/accuracy_plot.png))
+
+![Loss LSTM Integration]([[[[https://github.com/tograh/testrepository/3DTest.png](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/accuracy_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/loss_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_iou_loss/loss_plot.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_lstm/loss_plot.png))
 ## How to Use
 
 ### Prerequisites
@@ -102,3 +110,6 @@ The `video_unet.py` script processes a video file frame by frame, overlays the p
     python video_unet.py
     ```
     Press 'q' to quit the video stream.
+![Without LSTM Integration]([[[[https://github.com/tograh/testrepository/3DTest.png](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/accuracy_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_iou_loss/accuracy_plot_iou.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_lstm/accuracy_plot.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_lstm/whitout_lstm.png))
+
+![With LSTM Integration]([[[[[https://github.com/tograh/testrepository/3DTest.png](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/accuracy_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_binaryfocal/loss_plot_old.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_iou_loss/loss_plot.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_lstm/loss_plot.png)](https://github.com/doilonar/Lane-Detection-using-U-Net-with-Spatiotemporal/blob/main/unet_lstm/withlstm.png))
