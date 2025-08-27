@@ -16,7 +16,7 @@ This repository contains implementations for lane detection using both tradition
 .
 ├── Damoc_Robert-Marian.pptx      # Project presentation
 ├── Damoc_Robert-Marian_licenta.docx # Project thesis document
-├── cv.py                         # Classical computer vision lane detection implementation
+├── TuSimple_output_generation.py # Classical computer vision lane detection implementation
 ├── test_image.py                 # Script to test a trained model on a single image
 ├── video_unet.py                 # Script to run lane detection on a video using a U-Net model
 ├── unet_binaryfocal/
@@ -30,7 +30,7 @@ This repository contains implementations for lane detection using both tradition
 
 ## Models
 
-### 1. Classical CV Lane Detection (`cv.py`)
+### 1. Classical CV Lane Detection (`TuSimple_output_generation.py`)
 This method uses a pipeline of traditional image processing techniques:
 1.  **Preprocessing**: Converts the image to grayscale and HSV color spaces to create a binary mask for yellow and white lane lines.
 2.  **Perspective Transform**: Warps the detected lane lines into a bird's-eye view.
@@ -100,7 +100,7 @@ The training scripts (`run_unet.py`) expect the dataset to be organized into two
 The `test_image.py` script performs lane detection on a single image and displays the input image, the predicted mask, and a filtered/overlayed image.
 
 1.  Open `test_image.py`.
-2.  Set the `model` variable by loading the desired pre-trained model file (e.g., `unet_iou_loss/lane_cv_dropout_batch.h5`).
+2.  Set the `model` variable by loading the desired pre-trained model file (e.g., `unet_lstm/lane_cv_dropout_batch.h5`).
 3.  Update the `image_path` to point to your test image.
 4.  Run the script:
     ```bash
@@ -112,7 +112,7 @@ The `video_unet.py` script processes a video file frame by frame, overlays the p
 
 1.  Open `video_unet.py`.
 2.  Update `input_video_path` to your video file.
-3.  Set the `model` variable by loading the desired pre-trained model. The `unet-lstm` model is recommended for video.
+3.  Set the `model` variable by loading the desired pre-trained model. The `unet_lstm` model is recommended for video.
 4.  Run the script:
     ```bash
     python video_unet.py
