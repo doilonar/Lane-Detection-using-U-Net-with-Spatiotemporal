@@ -123,3 +123,5 @@ The `video_unet.py` script processes a video file frame by frame, overlays the p
 ![Without LSTM Integration](https://github.com/user-attachments/assets/17c628cf-bbd6-40b0-adc8-0f9f6c63602f)
 ### With LSTM Integration
 ![With LSTM Integration](https://github.com/user-attachments/assets/6cd5526f-cf9e-4a04-a61e-1b8895eb1a99)
+### Research Paper
+https://ieeexplore.ieee.org/abstract/document/11105626
